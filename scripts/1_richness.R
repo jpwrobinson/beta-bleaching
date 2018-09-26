@@ -4,11 +4,7 @@
 library(dplyr)
 library(stringr)
 library(rethinking)
-source('scaling_function.R')
-
-## save output for later inspection
-sink.file = paste0("texts/1_richness_output.txt")
-sink(sink.file)
+library(funk)
 
 
 ## define Bayesian sampling params

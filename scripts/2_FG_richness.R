@@ -1,24 +1,21 @@
 #!/bin/env Rscript
 
-library(here)
+
 library(dplyr)
 library(stringr)
 library(rethinking)
-setwd(here('beta-bleaching'))
-source('scaling_function.R')
+library(funk)
 
-## save output for later inspection
-sink.file = paste0("texts/2A_FG_output.txt")
-sink(sink.file)
-
-
-s1<-read.csv(file='data/UVC_richnessdiff_from94_FG.csv')
 
 ## define Bayesian sampling params
 iter = 7000
 cores = 3
 warmup = 1500
 chains = 3
+
+## read dataset
+s1<-read.csv(file='data/UVC_richnessdiff_FG.csv')
+
 
 ## Define model structures
 
@@ -107,8 +104,12 @@ m1 <- map2stan(m1.structure, data=focal.scaled, iter=iter, warmup = warmup, chai
 m2 <- map2stan(m2.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 m3 <- map2stan(m3.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 
-#### SAVE TOP MODELS
-save(m1,m2,m3, file='results/richness_corallivore_remote.Rdata')
+compare(m1, m2, m3)
+### m3 is top model
+m<-m3
+
+#### SAVE TOP MODEL
+save(m, file='results/02_richness_corallivore.Rdata')
 
 ## ------- ------- ------- ------- ------- ##
               ### Herbivore ###
@@ -123,8 +124,12 @@ m1 <- map2stan(m1.structure, data=focal.scaled, iter=iter, warmup = warmup, chai
 m2 <- map2stan(m2.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 m3 <- map2stan(m3.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 
-#### SAVE TOP MODELS
-save(m1,m2,m3, file='results/richness_herbivore_remote.Rdata')
+compare(m1, m2, m3)
+### m1 is top model
+m<-m1
+
+#### SAVE TOP MODEL
+save(m, file='results/02_richness_herbivore.Rdata')
 
 ## ------- ------- ------- ------- ------- ##
               ### Invertivore ###
@@ -139,8 +144,12 @@ m1 <- map2stan(m1.structure, data=focal.scaled, iter=iter, warmup = warmup, chai
 m2 <- map2stan(m2.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 m3 <- map2stan(m3.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 
-#### SAVE TOP MODELS
-save(m1,m2,m3, file='results/richness_invertivore_remote.Rdata')
+compare(m1, m2, m3)
+### m3 is top model
+m<-m3
+
+#### SAVE TOP MODEL
+save(m, file='results/02_richness_invertivore.Rdata')
 
 ## ------- ------- ------- ------- ------- ##
               ### Mixed-diet Feeder ###
@@ -155,8 +164,12 @@ m1 <- map2stan(m1.structure, data=focal.scaled, iter=iter, warmup = warmup, chai
 m2 <- map2stan(m2.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 m3 <- map2stan(m3.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 
-#### SAVE TOP MODELS
-save(m1,m2,m3, file='results/richness_mixed-diet_remote.Rdata')
+compare(m1, m2, m3)
+### m3 is top model
+m<-m3
+
+#### SAVE TOP MODEL
+save(m, file='results/richness_mixed-02_diet.Rdata')
 
 
 ## ------- ------- ------- ------- ------- ##
@@ -172,8 +185,12 @@ m1 <- map2stan(m1.structure, data=focal.scaled, iter=iter, warmup = warmup, chai
 m2 <- map2stan(m2.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 m3 <- map2stan(m3.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 
-#### SAVE TOP MODELS
-save(m1,m2,m3, file='results/richness_planktivore_remote.Rdata')
+compare(m1, m2, m3)
+### m2 is top model
+m<-m2
+
+#### SAVE TOP MODEL
+save(m, file='results/02_richness_planktivore.Rdata')
 
 ## ------- ------- ------- ------- ------- ##
               ### Piscivore ###
@@ -188,8 +205,12 @@ m1 <- map2stan(m1.structure, data=focal.scaled, iter=iter, warmup = warmup, chai
 m2 <- map2stan(m2.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 m3 <- map2stan(m3.structure, data=focal.scaled, iter=iter, warmup = warmup, chains=chains, cores=cores)
 
-#### SAVE TOP MODELS
-save(m1,m2,m3, file='results/richness_piscivore_remote.Rdata')
+compare(m1, m2, m3)
+### m1 is top model
+m<-m1
+
+#### SAVE TOP MODEL
+save(m, file='results/02_richness_piscivore.Rdata')
 
 
-sink()
+## end of script

@@ -16,11 +16,11 @@ chains = 3
 
 ############ Temporal richness models  ####################
 
-beta<-read.csv('data/UVC_temporal_richness.csv')
+beta<-read.csv('data/UVC_richness.csv')
 beta$site.year<-paste(beta$Location, beta$Year, sep='.')
 
 ## add predictors
-load('data/SEY_UVC_benthicPV_SC_DEPTH.Rdata')
+load('data/SEY_UVC_benthic.Rdata')
 beta$hardcoral<-SC$hard.coral[match(beta$site.year, SC$site.year)]
 beta$macroalgae<-SC$macroalgae[match(beta$site.year, SC$site.year)]
 beta$complexity<-SC$complexity[match(beta$site.year, SC$site.year)]
@@ -38,7 +38,8 @@ colnames(betaS)<-str_replace_all(colnames(betaS), '\\.', '\\')
 
 ## Check non linear year relationships
 ## With Bayesian - polynomial year effects
-### mu is richness, sigmar is variance
+### mu is richness, sigma is variance
+## Trends fitted separately to each UVC site as hierarchical structure
 
 ## m1 = Linear year effect
 m1 <- map2stan(
@@ -116,9 +117,13 @@ m3 <- map2stan(
 ), data=betaS, iter=iter, warmup = warmup, chains=chains, cores=cores)
 
 
+## compare model fits
+compare(m1, m2, m3)
+## m2 is top model
+
 ## Now add explanatory covariates
 
-## m4 = Non-linear year effect, X^2 + X^3, and explanatory covariates
+## m4 = Non-linear year effect(X^2) with explanatory covariates
 m4 <- map2stan(
 	alist(
 	    richness ~ dnorm( mu , sigma ) ,
@@ -156,7 +161,6 @@ m4 <- map2stan(
 ), data=betaS, iter=iter, warmup. = warmup, chains=chains, cores=cores)
 							
 
-save(betaS, m1,m2,m3,m4, file='results/richness_mods_remote.Rdata')
+save(betaS, m4, file='results/01_richness_model.Rdata')
 
-
-sink()
+## end of script

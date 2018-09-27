@@ -4,11 +4,7 @@
 library(dplyr)
 library(stringr)
 library(rethinking)
-source('scaling_function.R')
-
-## save output for later inspection
-sink.file = paste0("texts/5_biomdiff_output.txt")
-sink(sink.file)
+library(funk)
 
 
 ## define Bayesian sampling params
@@ -17,14 +13,13 @@ cores = 3
 warmup = 1500
 chains = 3
 
-
 ############ M5 = biomass change from 1994-2014 ####################
 	
 load(file='data/SEY_UVC_fish_clean_1994-2017.Rdata')
 fish<-fish[fish$count%in%c(1:8),]
 fish$Species<-as.character(fish$Species)
 
-biom20<-read.csv(file='data/UVC_biom_change_94_14_sitelevel.csv')
+biom20<-read.csv(file='data/UVC_biom_change.csv')
 colnames(biom20)[colnames(biom20)=='FG.coarse']<-'FG'
 biom20$biom.change<-biom20$biom.change.raw
 
@@ -36,7 +31,7 @@ size<-aggregate(length ~ Species, fish, mean)
 biom20$bodysize<-size$length[match(biom20$Species, size$Species)]
 
 ## add benthic predictors
-load('data/SEY_UVC_benthicPV_SC_DEPTH.Rdata')
+load('data/SEY_UVC_benthic.Rdata')
 SC<-SC[SC$year=='2014',]
 biom20$coralmassives<-SC$coral.massives[match(biom20$Location, SC$location)]
 biom20$coralencrusting<-SC$coral.encrusting[match(biom20$Location, SC$location)]
@@ -100,8 +95,7 @@ m <- map2stan(
 	data=biomS, iter=iter, warmup = warmup, chains=chains, cores=cores)
 
 
-save(biomS, biom20, m, file='results/biom_change_species_2014_remote.Rdata')
+save(biomS, biom20, m, file='results/05_biom_change_model.Rdata')
 
 
-
-sink()
+## end of script

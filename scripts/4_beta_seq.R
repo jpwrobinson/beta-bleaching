@@ -4,11 +4,7 @@
 library(dplyr)
 library(stringr)
 library(rethinking)
-source('scaling_function.R')
-
-## save output for later inspection
-sink.file = paste0("texts/4_betaseq_output.txt")
-sink(sink.file)
+library(funk)
 
 
 ## define Bayesian sampling params
@@ -17,13 +13,12 @@ cores = 3
 warmup = 1500
 chains = 3
 
-
 ############ Beta seq = temporal beta diversity between years ####################
 
-beta<-read.csv(file='data/UVC_temporal_abundance_beta_betweenyears.csv')
+beta<-read.csv(file='data/UVC_beta_seq.csv')
 
 ## add predictors
-load(file='data/SEY_UVC_benthicPV_SC_DEPTH.Rdata')
+load('data/SEY_UVC_benthic.Rdata')
 beta$hardcoral<-SC$hard.coral[match(beta$site.year, SC$site.year)]
 beta$macroalgae<-SC$macroalgae[match(beta$site.year, SC$site.year)]
 beta$complexity<-SC$complexity[match(beta$site.year, SC$site.year)]
@@ -39,6 +34,7 @@ colnames(betaS)<-str_replace_all(colnames(betaS), '\\.', '\\')
 ## Check non linear year relationships
 ## With Bayesian - polynomial year effects
 ### mu is betabray, sigmar is variance
+## Trends fitted separately to each UVC site as hierarchical structure
 
 ## m1 = Linear year effect
 m1 <- map2stan(
@@ -115,6 +111,9 @@ m3 <- map2stan(
 	    rho_loc ~ dlkjcorr(2)
 ), data=betaS, iter=iter, warmup = warmup, chains=chains, cores=cores)
 
+## compare model fits
+compare(m1, m2, m3)
+## m1 is top model
 
 ## Now add explanatory covariates
 
@@ -157,6 +156,6 @@ m4 <- map2stan(
 							
 
 
-save(betaS, m1, m2, m3, m4, file='results/betaseq_mods_remote.Rdata')
+save(betaS, m4, file='results/04_betaseq_model.Rdata')
 
-sink()
+## end of script

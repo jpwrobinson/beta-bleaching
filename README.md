@@ -4,9 +4,13 @@ R code and data accompanying **Climate change induces long-term persistence of n
 The following R packages were used to analyse data and create figures.
 
 ```
-install.packages(c("tidyverse", "rethinking", "devtools", "betapart")
+## Data analysis
+install.packages(c("tidyverse", "rethinking", "devtools", "betapart", "here")
 library(devtools)
 install_github('jpwrobinson/funk')
+
+## Figures
+install.packages(c("tidyverse", "rethinking", "XXXYYY")
 ```
 
 #### R scripts for statistical models 
@@ -28,10 +32,10 @@ Scripts load Bayesian models, generate predictions from posterior distributions,
 
 
 
-- Community richness in [Figure1a and b]('figures/richness_fig.R')
+- Community richness in [Figure1a,b]('figures/richness_fig.R')
 
-- beta_94 in [Figure1c and d]('figures/beta_94_fig.R')
+- beta_94 in [Figure1c,d]('figures/beta_94_fig.R')
 
-- beta_seq in [Figure1e and f]('figures/beta_seq_fig.R')
+- beta_seq in [Figure1e,f]('figures/beta_seq_fig.R')
 
 - Biomass change in [Figure4b,c]('figures/biomass_fig.R')

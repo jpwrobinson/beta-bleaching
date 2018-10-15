@@ -169,7 +169,7 @@ compare(m1, m2, m3)
 m<-m3
 
 #### SAVE TOP MODEL
-save(m, file='results/richness_mixed-02_diet.Rdata')
+save(m, file='results/02_richness_mixed-diet.Rdata')
 
 
 ## ------- ------- ------- ------- ------- ##

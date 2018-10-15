@@ -15,20 +15,11 @@ chains = 3
 
 ############ M5 = biomass change from 1994-2014 ####################
 	
-load(file='data/SEY_UVC_fish_clean_1994-2017.Rdata')
-fish<-fish[fish$count%in%c(1:8),]
-fish$Species<-as.character(fish$Species)
-
 biom20<-read.csv(file='data/UVC_biom_change.csv')
-colnames(biom20)[colnames(biom20)=='FG.coarse']<-'FG'
-biom20$biom.change<-biom20$biom.change.raw
 
 ## remove species that did not appear in either 1994 or later, per site
 biom20<-biom20[!(biom20$biom==0 & biom20$biom94==0),]
 
-## get mean sizes for plot ordering and predictions
-size<-aggregate(length ~ Species, fish, mean)
-biom20$bodysize<-size$length[match(biom20$Species, size$Species)]
 
 ## add benthic predictors
 load('data/SEY_UVC_benthic.Rdata')

@@ -1,0 +1,124 @@
+"","Replicate","Location","beta.bray","type","Year"
+"1","Mahe E Patch1","Mahe E Patch",0.515027851795313,"Recovering",1994
+"2","Mahe NW Carbonate1","Mahe NW Carbonate",0.478273229953369,"Recovering",1994
+"3","Mahe NW Granite1","Mahe NW Granite",0.477165418221954,"Recovering",1994
+"4","Mahe NW Patch1","Mahe NW Patch",0.585572490409272,"Recovering",1994
+"5","Mahe W Carbonate1","Mahe W Carbonate",0.509654855757872,"Recovering",1994
+"6","Mahe W Granite1","Mahe W Granite",0.518905353233666,"Recovering",1994
+"7","Mahe W Patch1","Mahe W Patch",0.489700169280523,"Recovering",1994
+"8","Praslin NE Granite1","Praslin NE Granite",0.487860867753117,"Recovering",1994
+"9","Praslin NE Patch1","Praslin NE Patch",0.472511180359875,"Recovering",1994
+"10","Praslin SW Granite1","Praslin SW Granite",0.481148077726865,"Recovering",1994
+"11","Ste Anne Granite1","Ste Anne Granite",0.52046261079296,"Recovering",1994
+"12","Ste Anne Patch1","Ste Anne Patch",0.505524356891706,"Recovering",1994
+"13","Cousin Carbonate","Cousin Carbonate",0.455155403132822,"Shifted",1994
+"14","Cousin Granite","Cousin Granite",0.463479116800632,"Shifted",1994
+"15","Cousin Patch","Cousin Patch",0.507061461152222,"Shifted",1994
+"16","Mahe E Carbonate","Mahe E Carbonate",0.516219292634332,"Shifted",1994
+"17","Mahe E Granite","Mahe E Granite",0.610832306728918,"Shifted",1994
+"18","Praslin NE Carbonate","Praslin NE Carbonate",0.493615158445654,"Shifted",1994
+"19","Praslin SW Carbonate","Praslin SW Carbonate",0.505021356584378,"Shifted",1994
+"20","Praslin SW Patch","Praslin SW Patch",0.532920605169249,"Shifted",1994
+"21","Ste Anne Carbonate","Ste Anne Carbonate",0.513545719202806,"Shifted",1994
+"22","Mahe E Patch11","Mahe E Patch",0.560969876858652,"Recovering",2005
+"23","Mahe NW Carbonate11","Mahe NW Carbonate",0.597081846076676,"Recovering",2005
+"24","Mahe NW Granite11","Mahe NW Granite",0.570660101406615,"Recovering",2005
+"25","Mahe NW Patch11","Mahe NW Patch",0.642721379187945,"Recovering",2005
+"26","Mahe W Carbonate11","Mahe W Carbonate",0.578470440699277,"Recovering",2005
+"27","Mahe W Granite11","Mahe W Granite",0.579251032742473,"Recovering",2005
+"28","Mahe W Patch11","Mahe W Patch",0.632671217575895,"Recovering",2005
+"29","Praslin NE Granite11","Praslin NE Granite",0.577717208813911,"Recovering",2005
+"30","Praslin NE Patch11","Praslin NE Patch",0.621283686194172,"Recovering",2005
+"31","Praslin SW Granite11","Praslin SW Granite",0.603495074317367,"Recovering",2005
+"32","Ste Anne Granite11","Ste Anne Granite",0.645509726228452,"Recovering",2005
+"33","Ste Anne Patch11","Ste Anne Patch",0.702613246711133,"Recovering",2005
+"34","Cousin Carbonate2","Cousin Carbonate",0.544057729948011,"Shifted",2005
+"35","Cousin Granite2","Cousin Granite",0.547820389889382,"Shifted",2005
+"36","Cousin Patch2","Cousin Patch",0.576897242637904,"Shifted",2005
+"37","Mahe E Carbonate2","Mahe E Carbonate",0.583654658587194,"Shifted",2005
+"38","Mahe E Granite2","Mahe E Granite",0.547191133303579,"Shifted",2005
+"39","Praslin NE Carbonate2","Praslin NE Carbonate",0.537479732638439,"Shifted",2005
+"40","Praslin SW Carbonate2","Praslin SW Carbonate",0.594472665779923,"Shifted",2005
+"41","Praslin SW Patch2","Praslin SW Patch",0.647939410071836,"Shifted",2005
+"42","Ste Anne Carbonate2","Ste Anne Carbonate",0.651435309068163,"Shifted",2005
+"43","Mahe E Patch12","Mahe E Patch",0.531249270571125,"Recovering",2008
+"44","Mahe NW Carbonate12","Mahe NW Carbonate",0.551543607105188,"Recovering",2008
+"45","Mahe NW Granite12","Mahe NW Granite",0.497482725653469,"Recovering",2008
+"46","Mahe NW Patch12","Mahe NW Patch",0.615677678847459,"Recovering",2008
+"47","Mahe W Carbonate12","Mahe W Carbonate",0.547794453347607,"Recovering",2008
+"48","Mahe W Granite12","Mahe W Granite",0.557701475930604,"Recovering",2008
+"49","Mahe W Patch12","Mahe W Patch",0.586531892278998,"Recovering",2008
+"50","Praslin NE Granite12","Praslin NE Granite",0.552163339838814,"Recovering",2008
+"51","Praslin NE Patch12","Praslin NE Patch",0.548368402169833,"Recovering",2008
+"52","Praslin SW Granite12","Praslin SW Granite",0.512413017923011,"Recovering",2008
+"53","Ste Anne Granite12","Ste Anne Granite",0.544143255299439,"Recovering",2008
+"54","Ste Anne Patch12","Ste Anne Patch",0.574839752859514,"Recovering",2008
+"55","Cousin Carbonate3","Cousin Carbonate",0.578961185889083,"Shifted",2008
+"56","Cousin Granite3","Cousin Granite",0.521249961321748,"Shifted",2008
+"57","Cousin Patch3","Cousin Patch",0.615881933021175,"Shifted",2008
+"58","Mahe E Carbonate3","Mahe E Carbonate",0.516516960912754,"Shifted",2008
+"59","Mahe E Granite3","Mahe E Granite",0.542164232310869,"Shifted",2008
+"60","Praslin NE Carbonate3","Praslin NE Carbonate",0.647683740522105,"Shifted",2008
+"61","Praslin SW Carbonate3","Praslin SW Carbonate",0.618106409139598,"Shifted",2008
+"62","Praslin SW Patch3","Praslin SW Patch",0.535859466192009,"Shifted",2008
+"63","Ste Anne Carbonate3","Ste Anne Carbonate",0.596524671548107,"Shifted",2008
+"64","Mahe E Patch13","Mahe E Patch",0.504772612209766,"Recovering",2011
+"65","Mahe NW Carbonate13","Mahe NW Carbonate",0.527247306349208,"Recovering",2011
+"66","Mahe NW Granite13","Mahe NW Granite",0.487373077207478,"Recovering",2011
+"67","Mahe NW Patch13","Mahe NW Patch",0.516974957029887,"Recovering",2011
+"68","Mahe W Carbonate13","Mahe W Carbonate",0.461589983821021,"Recovering",2011
+"69","Mahe W Granite13","Mahe W Granite",0.502462819479529,"Recovering",2011
+"70","Mahe W Patch13","Mahe W Patch",0.557275888028585,"Recovering",2011
+"71","Praslin NE Granite13","Praslin NE Granite",0.474127415190891,"Recovering",2011
+"72","Praslin NE Patch13","Praslin NE Patch",0.558894878776786,"Recovering",2011
+"73","Praslin SW Granite13","Praslin SW Granite",0.451577077334562,"Recovering",2011
+"74","Ste Anne Granite13","Ste Anne Granite",0.459273061797953,"Recovering",2011
+"75","Ste Anne Patch13","Ste Anne Patch",0.505356109083425,"Recovering",2011
+"76","Cousin Carbonate4","Cousin Carbonate",0.539266588395226,"Shifted",2011
+"77","Cousin Granite4","Cousin Granite",0.530334404055463,"Shifted",2011
+"78","Cousin Patch4","Cousin Patch",0.59960844112171,"Shifted",2011
+"79","Mahe E Carbonate4","Mahe E Carbonate",0.572155748185934,"Shifted",2011
+"80","Mahe E Granite4","Mahe E Granite",0.577173522759291,"Shifted",2011
+"81","Praslin NE Carbonate4","Praslin NE Carbonate",0.599581403977152,"Shifted",2011
+"82","Praslin SW Carbonate4","Praslin SW Carbonate",0.609773248111153,"Shifted",2011
+"83","Praslin SW Patch4","Praslin SW Patch",0.574548948516194,"Shifted",2011
+"84","Ste Anne Carbonate4","Ste Anne Carbonate",0.615722117902342,"Shifted",2011
+"85","Mahe E Patch14","Mahe E Patch",0.483038676392525,"Recovering",2014
+"86","Mahe NW Carbonate14","Mahe NW Carbonate",0.507773575769285,"Recovering",2014
+"87","Mahe NW Granite14","Mahe NW Granite",0.508801717877703,"Recovering",2014
+"88","Mahe NW Patch14","Mahe NW Patch",0.472903014536563,"Recovering",2014
+"89","Mahe W Carbonate14","Mahe W Carbonate",0.540646230740108,"Recovering",2014
+"90","Mahe W Granite14","Mahe W Granite",0.493449675328731,"Recovering",2014
+"91","Mahe W Patch14","Mahe W Patch",0.546913671354344,"Recovering",2014
+"92","Praslin NE Granite14","Praslin NE Granite",0.46930304333873,"Recovering",2014
+"93","Praslin NE Patch14","Praslin NE Patch",0.58982932943458,"Recovering",2014
+"94","Praslin SW Granite14","Praslin SW Granite",0.478835958065127,"Recovering",2014
+"95","Ste Anne Granite14","Ste Anne Granite",0.533484962989641,"Recovering",2014
+"96","Ste Anne Patch14","Ste Anne Patch",0.616515669099806,"Recovering",2014
+"97","Cousin Carbonate5","Cousin Carbonate",0.557360115906081,"Shifted",2014
+"98","Cousin Granite5","Cousin Granite",0.535983656995874,"Shifted",2014
+"99","Cousin Patch5","Cousin Patch",0.543904332704752,"Shifted",2014
+"100","Mahe E Carbonate5","Mahe E Carbonate",0.559816693522269,"Shifted",2014
+"101","Mahe E Granite5","Mahe E Granite",0.563351936792728,"Shifted",2014
+"102","Praslin NE Carbonate5","Praslin NE Carbonate",0.712014928930154,"Shifted",2014
+"103","Praslin SW Carbonate5","Praslin SW Carbonate",0.481284639674112,"Shifted",2014
+"104","Praslin SW Patch5","Praslin SW Patch",0.517173136312684,"Shifted",2014
+"105","Ste Anne Carbonate5","Ste Anne Carbonate",0.529761218883944,"Shifted",2014
+"106","Mahe E Patch15","Mahe E Patch",0.490571114843984,"Recovering",2017
+"107","Mahe NW Carbonate15","Mahe NW Carbonate",0.485516178977609,"Recovering",2017
+"108","Mahe NW Granite15","Mahe NW Granite",0.449519164193996,"Recovering",2017
+"109","Mahe NW Patch15","Mahe NW Patch",0.502451402114265,"Recovering",2017
+"110","Mahe W Carbonate15","Mahe W Carbonate",0.454821083577233,"Recovering",2017
+"111","Mahe W Granite15","Mahe W Granite",0.467949833960631,"Recovering",2017
+"112","Mahe W Patch15","Mahe W Patch",0.511372975086936,"Recovering",2017
+"113","Praslin NE Granite15","Praslin NE Granite",0.45484914686278,"Recovering",2017
+"114","Praslin NE Patch15","Praslin NE Patch",0.613838373497676,"Recovering",2017
+"115","Praslin SW Granite15","Praslin SW Granite",0.460432401317975,"Recovering",2017
+"116","Ste Anne Granite15","Ste Anne Granite",0.531793110520612,"Recovering",2017
+"117","Ste Anne Patch15","Ste Anne Patch",0.604372019176382,"Recovering",2017
+"118","Mahe E Carbonate6","Mahe E Carbonate",0.454631133768953,"Shifted",2017
+"119","Mahe E Granite6","Mahe E Granite",0.458846922801095,"Shifted",2017
+"120","Praslin NE Carbonate6","Praslin NE Carbonate",0.629386064005965,"Shifted",2017
+"121","Praslin SW Carbonate6","Praslin SW Carbonate",0.539239413798564,"Shifted",2017
+"122","Praslin SW Patch6","Praslin SW Patch",0.569859337549608,"Shifted",2017
+"123","Ste Anne Carbonate6","Ste Anne Carbonate",0.497525999983092,"Shifted",2017

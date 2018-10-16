@@ -86,7 +86,7 @@ m <- map2stan(
 	data=biomS, iter=iter, warmup = warmup, chains=chains, cores=cores)
 
 
-save(biomS, biom20, m, file='results/05_biom_change_model.Rdata')
+save(biomS, biom20, m, file='results/07_biom_change_model.Rdata')
 
 
 ## end of script

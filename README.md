@@ -63,3 +63,6 @@ Scripts load Bayesian models, generate predictions from posterior distributions,
 * Beta_seq estimates (Figure 1e,f): [04_beta_seq_model.Rdata](results/04_beta_seq_model.Rdata)
 * SIMPER analysis (Figure 4a): [06_simper.Rdata](results/06_simper.Rdata)
 * Biomass change from 1994 to 2014 (Figure 4b,c): [07_biom_change_model.Rdata](results/07_biom_change_model.Rdata)
+
+****
+Data and scripts are licensed under Creative Commons Attribution 4.0 International.

@@ -21,7 +21,7 @@ theme_set(theme_sleek())
 # ---------------------------------------------------------------------------
 
 ## load posteriors
-load(file='results/04_betaseq_model.Rdata')
+load(file='results/03_beta_94_model.Rdata')
 
 pred.clean<-data.frame(beta.bray = c(pred.mean[c(1:12)],pred.mean[c(13:24)]),
 						state = rep(c('Shifted', 'Recovering'), each=12),

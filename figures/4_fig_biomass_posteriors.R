@@ -1,11 +1,16 @@
-
-
 library(here)
+library(tidyverse)
+library(tidybayes)
+library(bayesplot)
+library(rethinking)
+library(forcats)
+library(ggpubr)
+library(cowplot)
+library(grid)
+library(ggridges)
+library(funk)
 
-library(tidyverse) ;library(tidybayes); library(bayesplot); library(rethinking); library(forcats)
-library(ggpubr);library(cowplot); library(grid); library(ggridges); library(funk)
-
-pdf(file='figures/final/4bc_fig_biomass.pdf', height=4.5, width=15)
+pdf(file='figures/Figure_4bc.pdf', height=4.5, width=15)
 par(mfrow=c(1,2))
 
 ############################################
@@ -17,7 +22,7 @@ fg.cols<-data.frame(col=c('#984ea3','#e41a1c','#4daf4a','#a65628','#ff7f00','#37
 		FG=c('Planktivore','Corallivore', 'Herbivore',  'Invertivore','Mixed-diet Feeder','Piscivore'))
 cols<-fg.cols$col; names(cols)<-fg.cols$FG
 
-load('data/results/models/bayes/3chains/biom_change_species_2014.Rdata')
+load('results/07_biom_change_model.Rdata')
 biom.full<-biom20
 
 

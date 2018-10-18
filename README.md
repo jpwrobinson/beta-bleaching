@@ -30,13 +30,14 @@ Scripts contains analyses underlying main results, including spatial and null di
 
 Scripts load Bayesian models, generate predictions from posterior distributions, then create figures.
 
-- Community richness in [Figure1a,b](figures/Figure1ab.R)
-- beta_94 in [Figure1c,d](figures/Figure1cv.R)
-- beta_seq in [Figure1e,f](figures/Figure1ef.R)
+- Community richness in [Figure1a,b](figures/Figure1_ab.R)
+- beta_94 in [Figure1c,d](figures/Figure1_cd.R)
+- beta_seq in [Figure1e,f](figures/Figure1_ef.R)
 - Functional group richness in [Figure 2](figures/Figure2.R)
 - Spatial beta diversity in [Figure 3][scripts/Figure3.R]
-- SIMPER analysis in [Figure 4a](figures/Figure4a.R)
-- Biomass change in [Figure4b,c]('figures/Figure4bc.R')
+- SIMPER analysis in [Figure 4a](figures/Figure4_a.R)
+- Modelled biomass change in [Figure4b,c]('figures/Figure4_bc.R')
+- Observed biomass change in [Figure 5]('figures/Figure5.R')
 
 ****
 #### Datasets and model predictions
@@ -49,6 +50,7 @@ Scripts load Bayesian models, generate predictions from posterior distributions,
 * Spatial beta diversity estimates in [UVC_beta_spatial.csv](data/UVC_beta_spatial.csv)
 * Species richness estimates in [UVC_richness.csv](data/UVC_richness.csv)
 * Functional group richness estimates in [UVC_richnessdiff_FG.csv](data/UVC_richnessdiff_FG.csv)
+* Species-level biomass change from 1994 to 2014 in [UVC_biom_change.csv](data/UVC_biom_change.csv)
 
 *Model predictions*
 

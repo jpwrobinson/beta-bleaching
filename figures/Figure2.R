@@ -1,10 +1,15 @@
 library(here)
+library(tidyverse)
+library(tidybayes)
+library(bayesplot)
+library(rethinking)
+library(forcats)
+library(ggpubr)
+library(cowplot)
+library(grid)
+library(ggridges)
+library(funk)
 
-library(tidyverse) ;library(tidybayes); library(bayesplot); library(rethinking); library(forcats)
-library(ggpubr);library(cowplot); library(grid); library(ggridges); library(funk)
-
-
-setwd('/Users/robins64/Documents/git_repos/beta-temp')
 
 ## load models and rename by feeding group
 load(file='results/02_richness_planktivore.Rdata'); m <- plank
@@ -171,7 +176,7 @@ fg.cols<-data.frame(cols<-c('#e41a1c','#4daf4a','#a65628','#ff7f00', '#377eb8', 
 barW=0.2
 mat<-matrix(c(1,1,3,3,5,5,1,1,3,3,5,5,2,2,4,4,6,6,2,2,4,4,6,6), nrow=6, ncol=4, byrow=F)
 
-pdf(file='figures/2_fig_richness.pdf', height=6, width=8)
+pdf(file='figures/Figure2.pdf', height=6, width=8)
 
 layout(mat)
 

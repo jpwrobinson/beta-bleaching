@@ -1,7 +1,14 @@
 library(here)
-
-library(tidyverse) ;library(tidybayes); library(bayesplot); library(rethinking); library(forcats)
-library(ggpubr);library(cowplot); library(grid); library(ggridges); library(funk)
+library(tidyverse)
+library(tidybayes)
+library(bayesplot)
+library(rethinking)
+library(forcats)
+library(ggpubr)
+library(cowplot)
+library(grid)
+library(ggridges)
+library(funk)
 
 
 ## plotting information

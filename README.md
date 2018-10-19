@@ -28,7 +28,7 @@ Scripts contains analyses underlying main results, including spatial and null di
 
 #### Figures
 
-Scripts load Bayesian models, generate predictions from posterior distributions, then create figures.
+Scripts load Bayesian models, generate predictions from posterior distributions, then create figures. Panels are separated to distinguish between different statistical models.
 
 - Community richness in [Figure1a,b](figures/Figure1_ab.R)
 - beta_94 in [Figure1c,d](figures/Figure1_cd.R)

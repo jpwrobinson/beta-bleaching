@@ -20,15 +20,20 @@ theme_set(theme_sleek())
 ##--------------- predicted beta change from 1994 ---------------------------------------------
 # ---------------------------------------------------------------------------
 
-pdf(file='figures-pdf/Figure1_ef.pdf', height=7, width=12)
+pdf(file='figures-pdf/Figure1_ef.pdf', height=4, width=10)
 
 ## load posteriors and fitted data
 load(file='results/04_beta_seq_model.Rdata')
 betaS$pt.col<-ifelse(betaS$state == 'Recovering', recovering, shifted)
 
+## load beta estimates
+beta<-read.csv(file='data/UVC_beta_seq.csv')
+beta$pt.col<-ifelse(beta$state == 'Recovering', recovering, shifted)
+
+
 pred.clean<-data.frame(beta.bray = c(pred.mean[c(1:12)],pred.mean[c(13:24)]),
 						state = rep(c('Shifted', 'Recovering'), each=12),
-						Year = rep(seq(min(betaS$Year),max(betaS$Year), length.out=12),times=2))
+						Year = rep(seq(min(beta$Year),max(beta$Year), length.out=12),times=2))
 
 
 pred.clean$PI66.lower<-c(pred.PI66[1,c(1:12)], pred.PI66[1,c(13:24)])
@@ -53,10 +58,10 @@ bs2<-ggplot(pred.clean, aes(Year, beta.bray, fill=state, col=state)) +
 				legend.title=element_blank(), 
 				legend.text=element_text(size=12)) +
 		guides(fill=guide_legend(nrow=1)) +
-		scale_y_continuous(limits=c(0.35, 0.8)) +
+		scale_y_continuous(limits=c(0.25, 0.75)) +
 		scale_x_continuous(breaks=c(2005, 2008, 2011, 2014, 2017), labels=c(2005, 2008, 2011, 2014, 2017), limits=c(2004.5, 2017.5)) +
 		labs(x = '', y =expression(paste(beta['1994']))) +
-		geom_jitter(data = betaS, aes(Year, betabray), width=0.25, size=1, alpha=0.3)
+		geom_jitter(data = beta, aes(Year, beta.bray), width=0.25, size=1, alpha=0.3)
 
 
 ## now parameter estimates

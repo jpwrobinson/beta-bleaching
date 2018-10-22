@@ -1,0 +1,7 @@
+load("/Users/robins64/Documents/git_repos/beta-bleaching/results/01_richness_model.Rdata")
+ls()
+pred.mean
+plot(pred.mean[1:12], 1:12)
+plot(pred.mean[1:12]~1:12)
+plot(pred.mean[1:12]~c(1:12))
+plot(pred.mean[1:12]~c(1:12))

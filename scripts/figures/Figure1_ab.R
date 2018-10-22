@@ -17,7 +17,7 @@ shifted<-c('#b30000')
 theme_set(theme_sleek())
 
 
-pdf(file='figures-pdf/Figure1_ab.pdf', height=7, width=12)
+pdf(file='figures-pdf/Figure1_ab.pdf', height=4, width=10)
 
 ## -------------------------------------------------------------------------- ##
 ## --------------- predicted richness change from 1994 ---------------------- ##
@@ -25,6 +25,7 @@ pdf(file='figures-pdf/Figure1_ab.pdf', height=7, width=12)
 
 beta<-read.csv('data/UVC_richness.csv')
 r94<-beta %>% filter(Year == 1994) %>% mutate(year.plot=2003.5)
+beta<-beta %>% filter(Year != 1994)
 beta$pt.col<-ifelse(beta$state == 'Recovering', recovering, shifted)
 
 ## load posteriors
@@ -95,3 +96,4 @@ plot_grid(bs0,params0, labels=c('(a)', '(b)'), align='h',nrow=1, rel_widths=c(1.
 dev.off()
 
 ## end of script
+

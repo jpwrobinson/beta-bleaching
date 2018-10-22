@@ -14,7 +14,7 @@ library(plotrix)
 
 ## load models and rename by feeding group
 load(file='results/02_richness_planktivore.Rdata'); plank <- m
-load(file='results/02_richness_piscivore.Rdata'); cor <- m 
+load(file='results/02_richness_corallivore.Rdata'); cor <- m 
 load(file='results/02_richness_herbivore.Rdata'); herb <- m 
 load(file='results/02_richness_invertivore.Rdata'); inv <- m 
 load(file='results/02_richness_mixed-diet.Rdata'); mix <- m 
@@ -60,8 +60,8 @@ herb.dat<-list(Year = rep(seq(min(focal.scaled$Year), max(focal.scaled$Year), le
 means<-link(herb, data=herb.dat, replace=list(a_loc=a_location_zeros, bb_loc=bb_location_zeros, bd_loc=bd_location_zeros))
 means<-means$mu
 herb.mean<-apply(means, 2, mean)
-## mean intervals and 89% uncertainty
-herb.PI89 <- apply( means , 2 , HPDI, prob=0.95 )
+## mean intervals and 95% uncertainty
+herb.PI95 <- apply( means , 2 , HPDI, prob=0.95 )
 
 ## ---------- ##
 ## Corallivores ##
@@ -79,8 +79,8 @@ cor.dat<-list(Year = rep(seq(min(focal.scaled$Year), max(focal.scaled$Year), len
 means<-link(cor, data=cor.dat, replace=list(a_loc=a_location_zeros, bb_loc=bb_location_zeros, bd_loc=bd_location_zeros))
 means<-means$mu
 cor.mean<-apply(means, 2, mean)
-## mean intervals and 89% uncertainty
-cor.PI89 <- apply( means , 2 , HPDI, prob=0.95 )
+## mean intervals and 95% uncertainty
+cor.PI95 <- apply( means , 2 , HPDI, prob=0.95 )
 
 ## ---------- ##
 ## Invertivores ##
@@ -97,9 +97,9 @@ inv.dat<-list(Year = rep(seq(min(focal.scaled$Year), max(focal.scaled$Year), len
 				Location = rep(factor('Cousin Carbonate'), times=60))
 means<-link(inv, data=inv.dat, replace=list(a_loc=a_location_zeros, bb_loc=bb_location_zeros, bd_loc=bd_location_zeros))
 means<-means$mu
-## mean intervals and 89% uncertainty
+## mean intervals and 95% uncertainty
 inv.mean<-apply(means, 2, mean)
-inv.PI89 <- apply( means , 2 , HPDI, prob=0.95 )
+inv.PI95 <- apply( means , 2 , HPDI, prob=0.95 )
 
 ## ---------- ##
 ## Mixed-diet ##
@@ -116,9 +116,9 @@ mix.dat<-list(Year = rep(seq(min(focal.scaled$Year), max(focal.scaled$Year), len
 				Location = rep(factor('Cousin Carbonate'), times=60))
 means<-link(mix, data=mix.dat, replace=list(a_loc=a_location_zeros, bb_loc=bb_location_zeros, bd_loc=bd_location_zeros))
 means<-means$mu
-## mean intervals and 89% uncertainty
+## mean intervals and 95% uncertainty
 mix.mean<-apply(means, 2, mean)
-mix.PI89 <- apply( means , 2 , HPDI, prob=0.95 )
+mix.PI95 <- apply( means , 2 , HPDI, prob=0.95 )
 
 ## ---------- ##
 ## Piscivores ##
@@ -135,9 +135,9 @@ pisc.dat<-list(Year = rep(seq(min(focal.scaled$Year), max(focal.scaled$Year), le
 				Location = rep(factor('Cousin Carbonate'), times=60))
 means<-link(pisc, data=pisc.dat, replace=list(a_loc=a_location_zeros, bb_loc=bb_location_zeros, bd_loc=bd_location_zeros))
 means<-means$mu
-## mean intervals and 89% uncertainty
+## mean intervals and 95% uncertainty
 pisc.mean<-apply(means, 2, mean)
-pisc.PI89 <- apply( means , 2 , HPDI, prob=0.95 )
+pisc.PI95 <- apply( means , 2 , HPDI, prob=0.95 )
 
 ## ---------- ##
 ## Planktivores ##
@@ -154,9 +154,9 @@ plank.dat<-list(Year = rep(seq(min(focal.scaled$Year), max(focal.scaled$Year), l
 				Location = rep(factor('Cousin Carbonate'), times=60))
 means<-link(plank, data=plank.dat, replace=list(a_loc=a_location_zeros, bb_loc=bb_location_zeros, bd_loc=bd_location_zeros))
 means<-means$mu
-## mean intervals and 89% uncertainty
+## mean intervals and 95% uncertainty
 plank.mean<-apply(means, 2, mean)
-plank.PI89 <- apply( means , 2 , HPDI, prob=0.95 )
+plank.PI95 <- apply( means , 2 , HPDI, prob=0.95 )
 
 ## ---------------------------------------- ##
   			  # Create Figure #
@@ -196,8 +196,8 @@ add_label(0.01, 0.05, label='(a) Planktivore', font=2 ,cex=1)
 ## post predictions
 lines( plank.dat$Year[rec.vec] , plank.mean[rec.vec] , lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Planktivore']))
 lines( plank.dat$Year[shif.vec] , plank.mean[shif.vec] , lty=2,lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Planktivore']))
-shade( plank.PI89[,rec.vec] , plank.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Planktivore']), 0.2))
-shade( plank.PI89[,shif.vec] , plank.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Planktivore']), 0.2))
+shade( plank.PI95[,rec.vec] , plank.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Planktivore']), 0.2))
+shade( plank.PI95[,shif.vec] , plank.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Planktivore']), 0.2))
 
 ## add observed points
 with(s1.mean[s1.mean$FG=='Planktivore',],
@@ -220,8 +220,8 @@ add_label(0.01, 0.05, label='(b) Corallivore', font=2 ,cex=1)
 ## post predictions
 lines( cor.dat$Year[rec.vec] , cor.mean[rec.vec], lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Corallivore']))
 lines( cor.dat$Year[shif.vec] , cor.mean[shif.vec] ,lty=2, lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Corallivore']))
-shade( cor.PI89[,rec.vec] , cor.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Corallivore']), 0.2))
-shade( cor.PI89[,shif.vec] , cor.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Corallivore']), 0.2))
+shade( cor.PI95[,rec.vec] , cor.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Corallivore']), 0.2))
+shade( cor.PI95[,shif.vec] , cor.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Corallivore']), 0.2))
 
 ## add observed points
 with(s1.mean[s1.mean$FG=='Corallivore',],
@@ -241,8 +241,8 @@ add_label(0.01, 0.05, label='(c) Herbivore', font=2 ,cex=1)
 ## post predictions
 lines( herb.dat$Year[rec.vec] , herb.mean[rec.vec] , lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Herbivore']))
 lines( herb.dat$Year[shif.vec] , herb.mean[shif.vec] ,lty=2, lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Herbivore']))
-shade( herb.PI89[,rec.vec] , cor.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Herbivore']), 0.2))
-shade( herb.PI89[,shif.vec] , cor.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Herbivore']), 0.2))
+shade( herb.PI95[,rec.vec] , cor.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Herbivore']), 0.2))
+shade( herb.PI95[,shif.vec] , cor.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Herbivore']), 0.2))
 
 ## add observed points
 with(s1.mean[s1.mean$FG=='Herbivore',],
@@ -262,8 +262,8 @@ add_label(0.01, 0.05, label='(d) Invertivore', font=2 ,cex=1)
 ## post predictions
 lines( inv.dat$Year[rec.vec] , inv.mean[rec.vec] ,lty=1, lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Invertivore']))
 lines( inv.dat$Year[shif.vec] , inv.mean[shif.vec] ,lty=2, lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Invertivore']))
-shade( inv.PI89[,rec.vec] , cor.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Invertivore']), 0.2))
-shade( inv.PI89[,shif.vec] , cor.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Invertivore']), 0.2))
+shade( inv.PI95[,rec.vec] , cor.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Invertivore']), 0.2))
+shade( inv.PI95[,shif.vec] , cor.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Invertivore']), 0.2))
 
 ## add observed points
 with(s1.mean[s1.mean$FG=='Invertivore',],
@@ -284,8 +284,8 @@ add_label(0.01, 0.05, label='(e) Mixed-diet Feeder', font=2 ,cex=1)
 ## post predictions
 lines( mix.dat$Year[rec.vec] , mix.mean[rec.vec] , lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Mixed-diet Feeder']))
 lines( mix.dat$Year[shif.vec] , mix.mean[shif.vec] , lty=2,lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Mixed-diet Feeder']))
-shade( mix.PI89[,rec.vec] , mix.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Mixed-diet Feeder']), 0.2))
-shade( mix.PI89[,shif.vec] , mix.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Mixed-diet Feeder']), 0.2))
+shade( mix.PI95[,rec.vec] , mix.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Mixed-diet Feeder']), 0.2))
+shade( mix.PI95[,shif.vec] , mix.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Mixed-diet Feeder']), 0.2))
 
 ## add observed points
 with(s1.mean[s1.mean$FG=='Mixed-diet Feeder',],
@@ -305,8 +305,8 @@ add_label(0.01, 0.05, label='(f) Piscivore', font=2 ,cex=1)
 ## post predictions
 lines( pisc.dat$Year[rec.vec] , pisc.mean[rec.vec] , lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Piscivore']))
 lines( pisc.dat$Year[shif.vec] , pisc.mean[shif.vec] ,lty=2, lwd=2,col=as.character(fg.cols$col[fg.cols$FG=='Piscivore']))
-shade( pisc.PI89[,rec.vec] , pisc.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Piscivore']), 0.2))
-shade( pisc.PI89[,shif.vec] , pisc.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Piscivore']), 0.2))
+shade( pisc.PI95[,rec.vec] , pisc.dat$Year[rec.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Piscivore']), 0.2))
+shade( pisc.PI95[,shif.vec] , pisc.dat$Year[shif.vec] ,col=alpha(as.character(fg.cols$col[fg.cols$FG=='Piscivore']), 0.2))
 
 ## add observed points
 with(s1.mean[s1.mean$FG=='Piscivore',],

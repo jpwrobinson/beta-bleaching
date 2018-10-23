@@ -24,21 +24,16 @@ biom20.mean$biom<-log10(biom20.mean$biom +1)
 biom20.mean$biom94<-log10(biom20.mean$biom94 +1)
 
 
-## simply naming
+## simplify naming
 biom20<-biom20.mean
 
 ## add some colours
 fg.cols<-data.frame(col=c('#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#a65628'),
     col2=c('#fc8d59', '#a6bddb', '#a1d99b', '#bcbddc', '#fed976', '#d8b365'),
     FG=c('Corallivore', 'Piscivore', 'Herbivore','Planktivore', 'Mixed-diet Feeder', 'Invertivore'))
-biom20$col[biom20$Species!='']<-as.character(fg.cols$col[match(biom20$FG[biom20$Species!=''], fg.cols$FG)])
-biom20$col2[biom20$Species!='']<-as.character(fg.cols$col2[match(biom20$FG[biom20$Species!=''], fg.cols$FG)])
-biom20$col.border[biom20$Species!='']<-'white'
-biom20$seg.col1[biom20$Species!='']<-'grey72'
-biom20$seg.col2[biom20$Species!='']<-'transparent'
+biom20$col<-as.character(fg.cols$col[match(biom20$FG, fg.cols$FG)])
+biom20$col.border<-'white'
 
-biom20$col.border94<-'white'
-biom20$col.border14<-'white'
 
 ## add absolute biomass difference, logged
 biom20$absdiff<-log10(abs(biom20$biom.change.raw) + 1)
@@ -61,7 +56,7 @@ pdf(file='figures-pdf/Figure5.pdf', height=7, width=8.5)
 cex.ax = 1
 cx.name = 0.45
 big.lab.cx = 1
-theme_set(theme_bw())
+
 
 
 split.screen(rbind(c(0,0.48,0, 1), c(0.52, 1, 0, 1)))
@@ -70,7 +65,7 @@ par(mar=c(0,0,0,0), xpd=T, oma=c(3.5,1,1.5,1),tcl = -0.25,mgp = c(2, 0.6, 0))
 
 ## recovering reefs
 segs<-barplot(t.rec$biom, horiz=T, yaxs='i',space=0,xlim=c(-2, 2),axisnames=F, axes=F,las=2, cex.names=0.5, plot=F)
-barplot(t.rec$absdiff, col=as.character(t.rec$col), border=t.rec$col.border14, horiz=T, yaxs='i',space=0, names.arg=t.rec$Species,
+barplot(t.rec$absdiff, col=as.character(t.rec$col), border=t.rec$col.border, horiz=T, yaxs='i',space=0, names.arg=t.rec$Species,
   xlim=c(-1.7, 2.30103),axisnames=F, axes=F,tck=-0.01,las=2, cex.names=cx.name)
 
 ### add log axes labels
@@ -101,7 +96,7 @@ par(mar=c(0,0,0,0), xpd=T, oma=c(4.5,1,1.5,1),tcl = -0.25,mgp = c(2, 0.6, 0))
 
 ## shifted reefs
 segs<-barplot(t.shif$biom, horiz=T, yaxs='i',space=0,xlim=c(-2, 2),axisnames=F, axes=F,las=2, cex.names=0.5, plot=F)
-barplot(t.shif$absdiff, col=as.character(t.shif$col), border=t.shif$col.border14, horiz=T, yaxs='i',space=0, names.arg=t.shif$Species,
+barplot(t.shif$absdiff, col=as.character(t.shif$col), border=t.shif$col.border, horiz=T, yaxs='i',space=0, names.arg=t.shif$Species,
   xlim=c(-1.7, 2.30103),axisnames=F, axes=F,tck=-0.01,las=2, cex.names=cx.name)
 
 

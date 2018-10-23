@@ -33,13 +33,13 @@ pred.clean<-data.frame(beta.bray = c(pred.mean[c(1:12)],pred.mean[c(13:24)]),
 						state = rep(c('Shifted', 'Recovering'), each=12),
 						Year = rep(seq(min(beta$Year),max(beta$Year), length.out=12),times=2))
 
-pred.clean$PI89.lower<-c(pred.PI89[1,c(1:12)], pred.PI89[1,c(13:24)])
-pred.clean$PI89.upper<-c(pred.PI89[2,c(1:12)], pred.PI89[2,c(13:24)])
+pred.clean$PI95.lower<-c(pred.PI95[1,c(1:12)], pred.PI95[1,c(13:24)])
+pred.clean$PI95.upper<-c(pred.PI95[2,c(1:12)], pred.PI95[2,c(13:24)])
 
 betaS$pt.col<-ifelse(betaS$state == 'Recovering', recovering, shifted)
 
 bs1<-ggplot(pred.clean, aes(Year, beta.bray, fill=state, col=state)) + 
-		geom_ribbon(alpha=0.1, show.legend=F,linetype=0,aes( ymin = PI89.lower, ymax=PI89.upper)) +
+		geom_ribbon(alpha=0.1, show.legend=F,linetype=0,aes( ymin = PI95.lower, ymax=PI95.upper)) +
 		geom_line(lwd=1, aes(linetype=state)) + 
 		scale_fill_manual(values=c(recovering,shifted)) +
 		scale_linetype_manual(values=c(1,5)) +

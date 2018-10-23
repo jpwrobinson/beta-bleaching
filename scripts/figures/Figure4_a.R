@@ -3,7 +3,7 @@
 ####### SIMPER ANALYSIS ####################
 ############################################
 
-pdf(file='figures-pdf/Figure4_a.pdf', height=4.5, width=15)
+pdf(file='figures-pdf/Figure4_a.pdf', height=6, width=9)
 
 
 ## data load
@@ -41,7 +41,7 @@ rect(xleft=xlab-barW, ybottom=0, xright=xlab+barW, ytop=contribution.change*100,
 with(s3[s3$change=='Loss',],
 rect(xleft=xlab-barW, ybottom=0, xright=xlab+barW, ytop=contribution.change*100, 
 	col=alpha(as.character(cols2), 0.5), border=NA))
-axis(2, cex.axis = 1.4); mtext(2, text='Relative contribution (%)',line=2.5, cex=1.2)
+axis(2, cex.axis = 1.4); mtext(2, text='Relative contribution (%)',line=2.5, cex=1.4)
 par(xpd=F); abline(a = 0, b=0, lty=2)
 par(xpd=T); add_label(0.01, 0.01, label='(a)', font=2 ,cex=1.6)
 legend('topright', legend=c('Recovering', 'Shifted'), inset=c(0, 0.1), 

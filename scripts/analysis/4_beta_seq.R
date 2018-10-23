@@ -190,10 +190,10 @@ bd_location_zeros <- matrix(0,1000,21)
 means<-link(m4, data=pred.dat, n=1000, replace=list(a_loc=a_location_zeros, bb_loc=bb_location_zeros, bd_loc=bd_location_zeros))
 means<-means$mu
 pred.mean<-apply(means, 2, mean)
-pred.PI66 <- apply( means , 2 , HPDI , prob=0.66 )
-pred.PI89 <- apply( means , 2 , HPDI , prob=0.89 )
+pred.PI50 <- apply( means , 2 , HPDI , prob=0.50 )
+pred.PI95 <- apply( means , 2 , HPDI , prob=0.95 )
 
 
-save(betaS, m4, pred.mean, pred.PI66, pred.PI89, file='results/04_beta_seq_model.Rdata')
+save(betaS, m4, pred.mean, pred.PI50, pred.PI95, file='results/04_beta_seq_model.Rdata')
 
 ## end of script

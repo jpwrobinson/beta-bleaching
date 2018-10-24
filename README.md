@@ -13,7 +13,7 @@ install_github('jpwrobinson/funk')
 
 #### R scripts for statistical analyses 
 
-Scripts contains analyses underlying main results, including spatial and null diversity functions, Bayesian model structures, and SIMPER analysis:
+Scripts contain analyses underlying main results, including spatial and null diversity functions, Bayesian model structures, and SIMPER analysis:
 
 - Community richness model in [1_richness.R](/scripts/1_richness.R)
 - Functional group richness change models in [2_FG_richness.R](scripts/2_FG_richness.R)

@@ -1,4 +1,6 @@
 
+print('Creating Figure 5')
+
 library(ggplot2) 
 library(dplyr)
 library(tidyr)
@@ -59,7 +61,7 @@ big.lab.cx = 1
 
 
 
-split.screen(rbind(c(0,0.48,0, 1), c(0.52, 1, 0, 1)))
+split.screen(rbind(c(0,0.47,0, 1), c(0.53, 1, 0, 1)))
 screen(1)
 par(mar=c(0,0,0,0), xpd=T, oma=c(3.5,1,1.5,1),tcl = -0.25,mgp = c(2, 0.6, 0))
 
@@ -80,19 +82,19 @@ add_label(0, 0.018, '(a)', cex =1.4, font = 2, pos =4)
 
 
 par(xpd=NA)
-add_label(0.5, -0.035, 'Recovering', cex =big.lab.cx, font = 2, pos =1)
+add_label(0.5, -0.05, 'Recovering', cex =big.lab.cx, font = 2, pos =1)
 
 ### legend names
-add_label(1.025, 0.05, fg.cols$FG[2], col=as.character(fg.cols$col[2]), cex=1.2, font=2, pos =3)
-add_label(1.025, 0.225, 'Mixed-diet feeder', col=as.character(fg.cols$col[5]), cex=1.2, font=2, pos =3)
-add_label(1.025, 0.44, fg.cols$FG[6], col=as.character(fg.cols$col[6]), cex=1.2, font=2, pos =3)
-add_label(1.025, 0.7, fg.cols$FG[3], col=as.character(fg.cols$col[3]), cex=1.2, font=2, pos =3)
-add_label(1.025, 0.94, fg.cols$FG[1], col=as.character(fg.cols$col[1]), cex=1.2, font=2, pos =3)
-add_label(1.025, 0.99, fg.cols$FG[4], col=as.character(fg.cols$col[4]), cex=1.2, font=2, pos =3)
+add_label(1.05, 0.05, fg.cols$FG[2], col=as.character(fg.cols$col[2]), cex=1, font=2, pos =3)
+add_label(1.05, 0.225, 'Mixed-diet feeder', col=as.character(fg.cols$col[5]), cex=1, font=2, pos =3)
+add_label(1.05, 0.44, fg.cols$FG[6], col=as.character(fg.cols$col[6]), cex=1, font=2, pos =3)
+add_label(1.05, 0.7, fg.cols$FG[3], col=as.character(fg.cols$col[3]), cex=1, font=2, pos =3)
+add_label(1.05, 0.94, fg.cols$FG[1], col=as.character(fg.cols$col[1]), cex=1, font=2, pos =3)
+add_label(1.05, 0.99, fg.cols$FG[4], col=as.character(fg.cols$col[4]), cex=1, font=2, pos =3)
 
 
 screen(2)
-par(mar=c(0,0,0,0), xpd=T, oma=c(4.5,1,1.5,1),tcl = -0.25,mgp = c(2, 0.6, 0))
+par(mar=c(0,0,0,0), xpd=T, oma=c(3.5,1,1.5,1),tcl = -0.25,mgp = c(2, 0.6, 0))
 
 ## shifted reefs
 segs<-barplot(t.shif$biom, horiz=T, yaxs='i',space=0,xlim=c(-2, 2),axisnames=F, axes=F,las=2, cex.names=0.5, plot=F)
@@ -117,11 +119,11 @@ abline(h=118, lty=2, lwd=0.5)
 add_label(0.94, 0.018, '(b)', cex =1.4, font = 2, pos =4)
 
 par(xpd=NA)
-add_label(0.5, -0.035, 'Regime shifted', cex =big.lab.cx, font = 2, pos =1)
+add_label(0.5, -0.05, 'Regime shifted', cex =big.lab.cx, font = 2, pos =1)
 
 
 
-mtext(1, text=expression(paste('biomass + 1 (kg ha'^'-1', ')', sep='')), line=3, outer=T, cex=big.lab.cx)
+mtext(1, text=expression(paste('biomass + 1 (kg ha'^'-1', ')', sep='')), line=2, outer=T, cex=big.lab.cx)
 
 dev.off()
 

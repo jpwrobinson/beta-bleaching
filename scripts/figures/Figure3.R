@@ -1,3 +1,6 @@
+
+print('Creating Figure 3')
+
 library(tidyverse)
 library(grid)
 library(gridExtra)
@@ -27,12 +30,10 @@ beta.plot<-beta %>%
 
 
 ## labels
-grob1 <- grobTree(textGrob("Recovering baseline", x=0.01,  y=0.455, hjust=0,
+grob1 <- grobTree(textGrob("Recovering baseline", x=0.01,  y=0.28, hjust=0,
   gp=gpar(col="#636363", fontsize=9)))
-grob2 <- grobTree(textGrob("Shifted baseline", x=0.01,  y=0.4925, hjust=0,
+grob2 <- grobTree(textGrob("Shifted baseline", x=0.01,  y=0.3025, hjust=0,
   gp=gpar(col="#636363", fontsize=9)))
-grob3 <- grobTree(textGrob("3 sites excluded", x=0.8,  y=0.15, hjust=0,
-  gp=gpar(col="#636363", fontsize=7)))
 
 ## create plots
 
@@ -54,7 +55,7 @@ bs0<-ggplot(beta.plot[beta.plot$state=='Recovering',], aes(factor(Year), beta.br
 				panel.grid.minor = element_blank(),
 		 		axis.line = element_line(colour = "black"),
 				legend.text=element_text(size=8)) +
-		scale_y_continuous(limits=c(0.43,0.6)) +
+		scale_y_continuous(limits=c(0.44,0.71)) +
 		labs(x = '', y =expression(beta['spatial'])) +
 		annotation_custom(grob1)
 
@@ -76,11 +77,9 @@ bs1<-ggplot(beta.plot[beta.plot$state=='Shifted',], aes(factor(Year), beta.bray,
 				panel.grid.minor = element_blank(),
 		 		axis.line = element_line(colour = "black"),
 				legend.text=element_text(size=8)) +
-		scale_y_continuous(limits=c(0.43,0.6)) +
+		scale_y_continuous(limits=c(0.44,0.71)) +
 		labs(x = '', y ='') +
-		annotation_custom(grob2) +
-		annotation_custom(grob3)
-
+		annotation_custom(grob2) 
 
 pdf(file='figures-pdf/Figure3.pdf', height=7, width=9)
 plot_grid(bs0, bs1, nrow=1, labels=c('(a)', '(b)'), label_size=14)

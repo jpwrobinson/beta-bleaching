@@ -6,6 +6,7 @@ library(here)
 setwd(here('beta-bleaching'))
 
 ## recreate figures
+dir.create('figures-pdf')
 sourceDirectory("scripts/figures/", print.eval = TRUE)
 
 ## rerun statistical analyses

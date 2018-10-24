@@ -1,3 +1,7 @@
+
+print('Creating Figure 1 cd')
+
+
 library(here)
 library(tidyverse)
 library(tidybayes)
@@ -55,7 +59,7 @@ bs1<-ggplot(pred.clean, aes(Year, beta.bray, fill=state, col=state)) +
 				legend.title=element_blank(), 
 				legend.text=element_text(size=8)) +
 		guides(fill=guide_legend(nrow=1)) +
-		scale_y_continuous(limits=c(0.25, 0.75)) +
+		scale_y_continuous(limits=c(0.35, 0.8)) +
 		scale_x_continuous(breaks=c(2005, 2008, 2011, 2014, 2017), labels=c(2005, 2008, 2011, 2014, 2017), limits=c(2004.5, 2017.5)) +
 		labs(x = '', y =expression(paste(beta['1994']))) +
 		geom_jitter(data = beta, aes(Year, beta.bray), width=0.25, size=1, alpha=0.3)

@@ -1,3 +1,6 @@
+
+print('Creating Figure 4 bc')
+
 library(here)
 library(tidyverse)
 library(tidybayes)
@@ -10,7 +13,7 @@ library(grid)
 library(ggridges)
 library(funk)
 
-pdf(file='figures-pdf/Figure_4bc.pdf', height=4.5, width=15)
+pdf(file='figures-pdf/Figure4_bc.pdf', height=4.5, width=15)
 par(mfrow=c(1,2))
 
 ############################################

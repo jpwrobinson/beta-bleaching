@@ -1,0 +1,28 @@
+load("/Users/robins64/Documents/git_repos/pirates/data/clean/VMS_clean_2010-15.Rdata")
+ls()
+head(vms)
+unique(vms$Mobile)
+head(vms)
+with(vms, table(year, Mobile))
+load("/Users/robins64/Documents/git_repos/pirates/data/clean/VMS_clean_2004-09.Rdata")
+ls()
+head(vms)
+unique(vms$Vessel_ID)
+rm(list=ls())
+library(R.utils)#
+library(here)#
+#
+## navigate to beta-bleaching#
+setwd(here('beta-bleaching'))#
+#
+## recreate figures#
+dircreate('figures')#
+sourceDirectory("scripts/figures/", print.eval = TRUE)
+getwd()
+setwd('../../beta-bleaching')
+setwd('../../../beta-bleaching')
+dir.create('figures')#
+sourceDirectory("scripts/figures/", print.eval = TRUE)
+## recreate figures#
+dir.create('figures-pdf')#
+sourceDirectory("scripts/figures/", print.eval = TRUE)

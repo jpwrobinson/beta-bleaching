@@ -4,7 +4,7 @@ R code and data accompanying **Climate change induces long-term persistence of n
 The following R packages were used to analyse data and create figures.
 
 ```
-install.packages(c("tidyverse", "rethinking", "devtools", "betapart", "here", "vegan")
+install.packages(c("tidyverse", "rethinking", "devtools", "betapart", "here", "vegan", "R.utils")
 library(devtools)
 install_github('jpwrobinson/funk')
 ```
@@ -38,6 +38,20 @@ Scripts load Bayesian models, generate predictions from posterior distributions,
 - SIMPER analysis in [Figure 4a](figures/Figure4_a.R)
 - Modelled biomass change in [Figure4b,c]('figures/Figure4_bc.R')
 - Observed biomass change in [Figure 5]('figures/Figure5.R')
+
+All figures can be recreated in R by running:
+
+```library(R.utils)
+library(here)
+library(R.utils)
+
+## navigate to beta-bleaching
+setwd(here('beta-bleaching'))
+
+## recreate figures
+dir.create('figures-pdf')
+sourceDirectory("scripts/figures/", print.eval = TRUE)
+```
 
 ****
 #### Datasets and model predictions

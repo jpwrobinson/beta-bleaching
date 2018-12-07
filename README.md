@@ -15,14 +15,14 @@ install_github('jpwrobinson/funk')
 
 Scripts contain analyses underlying main results, including spatial and null diversity functions, Bayesian model structures, and SIMPER analysis:
 
-- Community richness model in [1_richness.R](/scripts/1_richness.R)
-- Functional group richness change models in [2_FG_richness.R](scripts/2_FG_richness.R)
-- beta_94 models in [3_beta_94.R](scripts/3_beta_94.R)
-- beta_seq models in [4_beta_seq.R](scripts/4_beta_seq.R)
-- Function for pairwise beta spatial estimates in [5_beta_spatial.R](scripts/5_beta_spatial.R)
-- SIMPER dissimilarity analysis in [6_simper.R](scripts/6_simper_spatial.R)
-- Model of species-level biomass change from 1994 to 2014 in [7_biom_diff.R](scripts/7_biom_diff.R)
-- Null model for reshuffling species among sites in [8_null_model.R](scripts/8_null_model.R)
+- Community richness model in [1_richness.R](scripts/figures/1_richness.R)
+- Functional group richness change models in [2_FG_richness.R](scripts/figures/2_FG_richness.R)
+- beta_94 models in [3_beta_94.R](scripts/figures/3_beta_94.R)
+- beta_seq models in [4_beta_seq.R](scripts/figures/4_beta_seq.R)
+- Function for pairwise beta spatial estimates in [5_beta_spatial.R](scripts/figures/5_beta_spatial.R)
+- SIMPER dissimilarity analysis in [6_simper.R](scripts/figures/6_simper_spatial.R)
+- Model of species-level biomass change from 1994 to 2014 in [7_biom_diff.R](scripts/figures/7_biom_diff.R)
+- Null model for reshuffling species among sites in [8_null_model.R](scripts/figures/8_null_model.R)
 
 ****
 
@@ -30,14 +30,14 @@ Scripts contain analyses underlying main results, including spatial and null div
 
 Scripts load Bayesian models, generate predictions from posterior distributions, then create figures. Panels are separated to distinguish between different statistical models.
 
-- Community richness in [Figure1a,b](figures/Figure1_ab.R)
-- beta_94 in [Figure1c,d](figures/Figure1_cd.R)
-- beta_seq in [Figure1e,f](figures/Figure1_ef.R)
-- Functional group richness in [Figure 2](figures/Figure2.R)
-- SIMPER analysis in [Figure 3a](figures/Figure3_a.R)
-- Modelled biomass change in [Figure3b,c](figures/Figure3_bc.R)
-- Observed biomass change in [Figure 4](figures/Figure4.R)
-- Spatial beta diversity in [Figure S1](figures/FigureS1.R]
+- Community richness in [Figure1a,b](scripts/figures/Figure1_ab.R)
+- beta_94 in [Figure1c,d](scripts/figures/Figure1_cd.R)
+- beta_seq in [Figure1e,f](scripts/figures/Figure1_ef.R)
+- Functional group richness in [Figure 2](scripts/figures/Figure2.R)
+- SIMPER analysis in [Figure 3a](scripts/figures/Figure3_a.R)
+- Modelled biomass change in [Figure3b,c](scripts/figures/Figure3_bc.R)
+- Observed biomass change in [Figure 4](scripts/figures/Figure4.R)
+- Spatial beta diversity in [Figure S1](scripts/figures/FigureS1.R)
 
 All figures can be recreated in R by running:
 

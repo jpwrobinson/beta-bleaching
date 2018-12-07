@@ -15,14 +15,14 @@ install_github('jpwrobinson/funk')
 
 Scripts contain analyses underlying main results, including spatial and null diversity functions, Bayesian model structures, and SIMPER analysis:
 
-- Community richness model in [1_richness.R](scripts/figures/1_richness.R)
-- Functional group richness change models in [2_FG_richness.R](scripts/figures/2_FG_richness.R)
-- beta_94 models in [3_beta_94.R](scripts/figures/3_beta_94.R)
-- beta_seq models in [4_beta_seq.R](scripts/figures/4_beta_seq.R)
-- Function for pairwise beta spatial estimates in [5_beta_spatial.R](scripts/figures/5_beta_spatial.R)
-- SIMPER dissimilarity analysis in [6_simper.R](scripts/figures/6_simper_spatial.R)
-- Model of species-level biomass change from 1994 to 2014 in [7_biom_diff.R](scripts/figures/7_biom_diff.R)
-- Null model for reshuffling species among sites in [8_null_model.R](scripts/figures/8_null_model.R)
+- Community richness model in [1_richness.R](scripts/analysis/1_richness.R)
+- Functional group richness change models in [2_FG_richness.R](scripts/analysis/2_FG_richness.R)
+- beta_94 models in [3_beta_94.R](scripts/analysis/3_beta_94.R)
+- beta_seq models in [4_beta_seq.R](scripts/analysis/4_beta_seq.R)
+- Function for pairwise beta spatial estimates in [5_beta_spatial.R](scripts/analysis/5_beta_spatial.R)
+- SIMPER dissimilarity analysis in [6_simper.R](scripts/analysis/6_simper_spatial.R)
+- Model of species-level biomass change from 1994 to 2014 in [7_biom_diff.R](scripts/analysis/7_biom_diff.R)
+- Null model for reshuffling species among sites in [8_null_model.R](scripts/analysis/8_null_model.R)
 
 ****
 

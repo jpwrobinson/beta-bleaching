@@ -37,7 +37,7 @@ Scripts load Bayesian models, generate predictions from posterior distributions,
 - SIMPER analysis in [Figure 3a](figures/Figure3_a.R)
 - Modelled biomass change in [Figure3b,c]('figures/Figure3_bc.R')
 - Observed biomass change in [Figure 4]('figures/Figure4.R')
-- Spatial beta diversity in [Figure S1][scripts/FigureS1.R]
+- Spatial beta diversity in [Figure S1]['figures/FigureS1.R']
 
 All figures can be recreated in R by running:
 

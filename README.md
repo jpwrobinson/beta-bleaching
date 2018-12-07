@@ -1,5 +1,5 @@
 # beta-bleaching
-R code and data accompanying **Climate change induces long-term persistence of novel coral reef fish assemblages**.  *In review.*
+R code and data accompanying **Climate change induces persistently altered coral reef fish assemblages**.  *In review.*
 
 The following R packages were used to analyse data and create figures.
 
@@ -34,10 +34,10 @@ Scripts load Bayesian models, generate predictions from posterior distributions,
 - beta_94 in [Figure1c,d](figures/Figure1_cd.R)
 - beta_seq in [Figure1e,f](figures/Figure1_ef.R)
 - Functional group richness in [Figure 2](figures/Figure2.R)
-- Spatial beta diversity in [Figure 3][scripts/Figure3.R]
-- SIMPER analysis in [Figure 4a](figures/Figure4_a.R)
-- Modelled biomass change in [Figure4b,c]('figures/Figure4_bc.R')
-- Observed biomass change in [Figure 5]('figures/Figure5.R')
+- SIMPER analysis in [Figure 3a](figures/Figure3_a.R)
+- Modelled biomass change in [Figure3b,c]('figures/Figure3_bc.R')
+- Observed biomass change in [Figure 4]('figures/Figure4.R')
+- Spatial beta diversity in [Figure S1][scripts/FigureS1.R]
 
 All figures can be recreated in R by running:
 
@@ -77,8 +77,8 @@ sourceDirectory("scripts/figures/", print.eval = TRUE)
 * Piscivore richness model (Figure 2f): [02_richness_planktivore.Rdata](results/02_richness_planktivore.Rdata)
 * Beta_1994 estimates (Figure 1c,d): [03_beta_94_model.Rdata](results/03_beta_94_model.Rdata)
 * Beta_seq estimates (Figure 1e,f): [04_beta_seq_model.Rdata](results/04_beta_seq_model.Rdata)
-* SIMPER analysis (Figure 4a): [06_simper.Rdata](results/06_simper.Rdata)
-* Biomass change from 1994 to 2014 (Figure 4b,c): [07_biom_change_model.Rdata](results/07_biom_change_model.Rdata)
+* SIMPER analysis (Figure 3a): [06_simper.Rdata](results/06_simper.Rdata)
+* Biomass change from 1994 to 2014 (Figure 3b,c): [07_biom_change_model.Rdata](results/07_biom_change_model.Rdata)
 
 ****
 Data and scripts are licensed under Creative Commons Attribution 4.0 International.

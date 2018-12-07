@@ -1,5 +1,5 @@
 
-print('Creating Figure 3')
+print('Creating Figure S1')
 
 library(tidyverse)
 library(grid)

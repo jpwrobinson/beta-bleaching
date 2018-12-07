@@ -35,9 +35,9 @@ Scripts load Bayesian models, generate predictions from posterior distributions,
 - beta_seq in [Figure1e,f](figures/Figure1_ef.R)
 - Functional group richness in [Figure 2](figures/Figure2.R)
 - SIMPER analysis in [Figure 3a](figures/Figure3_a.R)
-- Modelled biomass change in [Figure3b,c]('figures/Figure3_bc.R')
-- Observed biomass change in [Figure 4]('figures/Figure4.R')
-- Spatial beta diversity in [Figure S1]['figures/FigureS1.R']
+- Modelled biomass change in [Figure3b,c](figures/Figure3_bc.R)
+- Observed biomass change in [Figure 4](figures/Figure4.R)
+- Spatial beta diversity in [Figure S1](figures/FigureS1.R]
 
 All figures can be recreated in R by running:
 

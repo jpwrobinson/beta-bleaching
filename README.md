@@ -1,6 +1,8 @@
 # beta-bleaching
 R code and data accompanying **Thermal stress induces persistently altered coral reef fish assemblages**.  *Global Change Biology*
 
+[https://onlinelibrary.wiley.com/doi/10.1111/gcb.14704](https://onlinelibrary.wiley.com/doi/10.1111/gcb.14704)
+
 The following R packages were used to analyse data and create figures.
 
 ```
